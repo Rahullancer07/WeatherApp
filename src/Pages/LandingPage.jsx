@@ -41,8 +41,8 @@ const LandingPage = ({city, setCity}) => {
   }, [city]);
 
   return (
-    <div className="bg-background h-screen bg-cover flex flex-col justify-center sm:h-screen sm:w-full sm:bg-cover">
-      <div className="flex flex-row gap-5 w-2/4 justify-between m-auto pt-10">
+    <div className="bg-background h-screen bg-cover flex flex-col justify-center sm:h-screen sm:w-full sm:bg-cover gap-10">
+      <div className="flex flex-row gap-5 w-2/4 justify-between mx-auto">
         <div className="w-full">
           <Input city={city} setCity={setCity} />
         </div>

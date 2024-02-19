@@ -9,8 +9,8 @@ import HourForeCast from "../Components/HourForecast";
 
 const WeatherPage = ({ data, isCelcius }) => {
   return (
-    <div className="w-full h-screen flex">
-      <div className="rounded-2xl bg-black/75 flex flex-row px-14 items-center gap-10 justify-between m-auto lg:w-9/12 lg:h-5/6">
+    <div className="flex">
+      <div className="rounded-2xl bg-black/75 flex px-14 items-center gap-10 justify-between m-auto lg:w-9/12 lg:h-auto">
         <div className="rounded-2xl flex lg:w-2/5 lg:h-5/6">
           <div className="rounded-2xl flex flex-col gap-5 w-full h-full ">
             <div className="rounded-2xl bg-background sm: lg:w-full h-full">
@@ -41,10 +41,10 @@ const WeatherPage = ({ data, isCelcius }) => {
                     °
                   </span>
                 </div>
-                <div className="rounded-2xl flex flex-row gap-5 sm: lg:w-full h-1/4">
+                <div className="rounded-2xl flex flex-row gap-5 sm: lg:w-full ">
                   <div className="rounded-2xl flex flex-col justify-start pl-2 pt-2 bg-black/60 sm: lg:w-2/4 h-full">
                     <span className="text-slate-400 uppercase">
-                      <ThermostatIcon className="h-5 w-5 mr-2" />
+                      <ThermostatIcon className="max-h-5 max-w-5 mr-2" />
                       Feels like
                     </span>
                     <span className="text-white text-5xl mt-2 pl-2 pt-3">
