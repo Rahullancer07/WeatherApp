@@ -9,146 +9,141 @@ import HourForeCast from "../Components/HourForecast";
 
 const WeatherPage = ({ data, isCelcius }) => {
   return (
-    <div className="flex">
-      <div className="rounded-2xl bg-black/75 flex px-14 items-center gap-10 justify-between m-auto lg:w-9/12 lg:h-auto">
-        <div className="rounded-2xl flex lg:w-2/5 lg:h-5/6">
-          <div className="rounded-2xl flex flex-col gap-5 w-full h-full ">
-            <div className="rounded-2xl bg-background sm: lg:w-full h-full">
-              <div className="rounded-2xl flex flex-col gap-5 p-5 bg-black/60 sm: lg:w-full h-full">
-                <div className="m-auto flex flex-col p-10 h-2/4">
-                <span className="text-white text-xl m-auto">
-                    {data.location.name}
-                  </span>
-                  <span className="text-white text-6xl m-auto">
-                    {data.current[isCelcius ? "temp_c" : "temp_f"]}°
-                  </span>
-                  <span className="text-white text-3xl m-auto">
-                    {data.current.condition.text}
-                  </span>
-                  <span className="text-white text-xl m-auto">
-                    H:
-                    {
-                      data.forecast.forecastday[0].day[
-                        isCelcius ? "maxtemp_c" : "maxtemp_f"
-                      ]
-                    }
-                    ° L:
-                    {
-                      data.forecast.forecastday[0].day[
-                        isCelcius ? "mintemp_c" : "mintemp_f"
-                      ]
-                    }
-                    °
-                  </span>
-                </div>
-                <div className="rounded-2xl flex flex-row gap-5 sm: lg:w-full ">
-                  <div className="rounded-2xl flex flex-col justify-start pl-2 pt-2 bg-black/60 sm: lg:w-2/4 h-full">
-                    <span className="text-slate-400 uppercase">
-                      <ThermostatIcon className="max-h-5 max-w-5 mr-2" />
-                      Feels like
-                    </span>
-                    <span className="text-white text-5xl mt-2 pl-2 pt-3">
-                      {data.current[isCelcius ? "feelslike_c" : "feelslike_f"]}°{" "}
-                    </span>
-                  </div>
-                  <div className="rounded-2xl flex flex-col justify-start pl-2 pt-2 bg-black/60 sm: lg:w-2/4 h-full">
-                    <span className="text-slate-400 uppercase">
-                      <WaterDropIcon className="h-5 w-5 mr-2" />
-                      Precipitation
-                    </span>
-                    <span className="text-white text-5xl mt-2 pl-2 pt-3">
-                      {data.current.precip_in}"
-                    </span>
-                  </div>
-                </div>
-                <div className="rounded-2xl flex flex-row justify-center align-center gap-5 sm: lg:w-full h-1/4">
-                  <div className="rounded-2xl flex flex-col justify-start pl-2 pt-2 bg-black/60 sm: lg:w-2/4 h-full">
-                    <span className="text-slate-400 uppercase">
-                      <VisibilityIcon className="h-5 w-5 mr-2" />
-                      Visibilty
-                    </span>
-                    <span className="text-white text-5xl mt-2 pl-2 pt-3">
-                      {data.current.vis_km} mi
-                    </span>
-                  </div>
-                  <div className="rounded-2xl flex flex-col justify-start pl-2 pt-2 bg-black/60 sm: lg:w-2/4 h-full">
-                    <span className="text-slate-400 uppercase">
-                      <WaterDropOutlinedIcon className="h-5 w-5 mr-2" />
-                      Humidity
-                    </span>
-                    <span className="text-white text-5xl mt-2 pl-2 pt-3">
-                      {data.current.humidity}%
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <div className="rounded-xl md:bg-black/25 flex flex-col lg:flex-row px-5 sm:px-10 py-10 gap-10 mx-auto justify-center md:w-11/12 h-fit">
+      <div className="rounded-lg flex flex-col gap-5 p-5 bg-black/25 h-fit w-full">
+        {/* location, temp ,condition ,and high & low */}
+        <div className="flex flex-col gap-2 mb-10">
+          <span className="text-white text-lg flex justify-center">
+            {data.location.name}
+          </span>
+          <span className="text-white text-8xl flex justify-center pl-10">
+            {data.current[isCelcius ? "temp_c" : "temp_f"]}°
+          </span>
+          <span className="text-white text-2xl flex justify-center">
+            {data.current.condition.text}
+          </span>
+          <span className="text-white text-xl flex justify-center">
+            H:
+            {
+              data.forecast.forecastday[0].day[
+                isCelcius ? "maxtemp_c" : "maxtemp_f"
+              ]
+            }
+            ° L:
+            {
+              data.forecast.forecastday[0].day[
+                isCelcius ? "mintemp_c" : "mintemp_f"
+              ]
+            }
+            °
+          </span>
+        </div>
+        {/* feels like , precipitation , Visibility and humidity */}
+        <div className="rounded-xl grid grid-cols-2 gap-5 w-full">
+          <div className="rounded-xl flex flex-col justify-start px-2 py-2 bg-black/30">
+            <span className="text-white/65 uppercase text-sm flex items-center">
+              <ThermostatIcon />
+              Feels like
+            </span>
+            <span className="text-white text-5xl px-2 py-3">
+              {data.current[isCelcius ? "feelslike_c" : "feelslike_f"]}°{" "}
+            </span>
+          </div>
+          <div className="rounded-xl flex flex-col justify-start px-2 py-2 bg-black/30">
+            <span className="text-white/65 uppercase text-xs md:text-sm flex items-center">
+              <WaterDropIcon />
+              Precipitation
+            </span>
+            <span className="text-white text-5xl px-2 py-3">
+              {data.current.precip_in}"
+            </span>
           </div>
         </div>
-        <div className="rounded-2xl flex flex-col gap-10 sm: lg:w-3/5 h-5/6 ">
-          <div className="rounded-2xl bg-black/50 sm: lg:w-full h-56">
-            <HourForeCast
-              data={data.forecast.forecastday[0]}
-              isCelcius={isCelcius}
-            />
+        <div className="rounded-xl grid grid-cols-2 gap-5 w-full">
+          <div className="rounded-xl flex flex-col justify-start px-2 py-2 bg-black/30">
+            <span className="text-white/65 uppercase text-sm flex items-center">
+              <VisibilityIcon />
+              Visibilty
+            </span>
+            <span className="text-white text-5xl px-2 py-3">
+              {data.current.vis_km} mi
+            </span>
           </div>
-          <div className="rounded-2xl bg-black/50 sm: lg:w-full h-52">
-            <DayForecast
-              data={data.forecast.forecastday}
-              isCelcius={isCelcius}
-            />
+          <div className="rounded-xl flex flex-col justify-start px-2 py-2 bg-black/30">
+            <span className="text-white/65 uppercase text-sm flex items-center">
+              <WaterDropOutlinedIcon />
+              Humidity
+            </span>
+            <span className="text-white text-5xl px-2 py-3">
+              {data.current.humidity}%
+            </span>
           </div>
-          <div className="flex flex-row sm: lg:w-full h-48 gap-10">
-            <div className="w-1/2 bg-black/50 rounded-2xl flex flex-row">
-              <div className="rounded-2xl flex flex-col pl-5 pt-3 sm: lg:w-2/3 h-full">
-                <span className="text-slate-400 uppercase">
-                  <AirOutlinedIcon className="h-5 w-5 mr-2" />
-                  Wind
-                </span>
-                <div className="flex flex-row mt-2">
-                  <span className="text-4xl text-white">
+        </div>
+      </div>
+      <div className="rounded-xl flex flex-col gap-10 lg:w-3/5">
+        <div className="rounded-xl bg-black/30 lg:w-full h-56">
+          <HourForeCast
+            data={data.forecast.forecastday[0]}
+            isCelcius={isCelcius}
+          />
+        </div>
+        <div className="rounded-xl bg-black/30 lg:w-full h-52">
+          <DayForecast data={data.forecast.forecastday} isCelcius={isCelcius} />
+        </div>
+        <div className="flex flex-col sm:flex-row lg:w-full h-full gap-10">
+          <div className="w-full sm:w-1/2 bg-black/30 rounded-xl">
+            <div className="rounded-xl flex flex-col p-5 w-full h-full">
+              <span className="text-white/65 uppercase">
+                <AirOutlinedIcon className="h-5 w-5 mr-2" />
+                Wind
+              </span>
+              <div className="grid grid-cols-2">
+                <div className="col-span-1 grid grid-cols-2">
+                  <span className="text-4xl text-white text-center flex items-center col-span-1">
                     {data.current.wind_mph}
                   </span>
-                  <div className="flex flex-col text-white gap-1 ml-5">
-                    <span className="text-slate-400">MPH</span>
+                  <div className="flex flex-col text-white gap-1">
+                    <span className="text-white/65">MPH</span>
                     <span>Wind</span>
                   </div>
                 </div>
-                <div className="w-4/5 border-b-2 mt-2"></div>
-                <div className="flex flex-row mt-2">
-                  <span className="text-4xl text-white">
+                <div className="text-white text-4xl flex flex-col items-center h-full">
+                  <span className="my-auto">{data.current.wind_dir}</span>
+                </div>
+                <div className="border-b-2 mt-4"></div>
+              </div>
+              <div className="grid grid-cols-2 mt-4">
+                <div className="col-span-1 grid grid-cols-2">
+                  <span className="text-4xl text-white text-center flex items-center">
                     {data.current.gust_mph}
                   </span>
-                  <div className="flex flex-col text-white gap-1 ml-5">
-                    <span className="text-slate-400">MPH</span>
+                  <div className="flex flex-col text-white gap-1">
+                    <span className="text-white/65">MPH</span>
                     <span>Gusts</span>
                   </div>
                 </div>
-              </div>
-              <div className="text-white text-4xl flex flex-col items-center h-full">
-                <span className="my-auto">{data.current.wind_dir}</span>
-                <span className="my-auto">{data.current.wind_degree}°</span>
+                <div className="text-white text-4xl flex flex-col items-center h-full">
+                  <span className="my-auto">{data.current.wind_degree}°</span>
+                </div>
               </div>
             </div>
-            <div className="w-1/2 bg-black/50 rounded-2xl ">
-              <div className="rounded-2xl flex flex-col pl-5 pr-10 pt-3 sm: lg:w-full h-full">
-                <span className="text-slate-400 uppercase">
-                  <AirOutlinedIcon className="h-5 w-5 mr-2" />
-                  Uv index
-                </span>
-                <span className="text-4xl text-white pt-5">
-                  {data.current.uv}
-                </span>
-                <div className="pt-5 slideContainer">
-                  <input
-                    type="range"
-                    min="1"
-                    max="100"
-                    value={data.current.uv}
-                    class="slider"
-                    id="myRange"
-                  ></input>
-                </div>
+          </div>
+          <div className="w-full sm:w-1/2 bg-black/30 rounded-xl">
+            <div className="rounded-xl flex flex-col p-5 h-full/">
+              <span className="text-white/65 uppercase">
+                <AirOutlinedIcon className="h-5 w-5 mr-2" />
+                Uv index
+              </span>
+              <span className="text-6xl text-white px-5 pt-5">{data.current.uv}</span>
+              <div className="p-5 slideContainer">
+                <input
+                  type="range"
+                  min="1"
+                  max="100"
+                  value={data.current.uv}
+                  class="slider"
+                  id="myRange"
+                ></input>
               </div>
             </div>
           </div>

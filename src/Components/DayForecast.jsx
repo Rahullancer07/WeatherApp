@@ -12,13 +12,13 @@ const DayForecast = ({ data, isCelcius }) => {
   };
 
   return (
-    <div className="flex flex-col gap-5">
-      <div className="h-1/3 w-full text-slate-400 px-5 pt-5 flex flex-col">
+    <div className="flex flex-col gap-5 mb-5">
+      <div className="h-1/3 w-full text-white/65 px-5 pt-5 flex flex-col">
         <div className="w-full flex items-center">
           <CalendarTodayOutlinedIcon />
-          <span className="ml-3 text-slate-400 uppercase">3-Day Forecast</span>
+          <span className="ml-3 text-white/65 uppercase">3-Day Forecast</span>
         </div>
-        <div className="w-full mt-2 border-b-2 border-slate-400"></div>
+        <div className="w-full mt-2 border-b-2 border-white/65"></div>
       </div>
       <div className="h-2/3 w-11/12 ml-5 flex flex-row wrapper">
         {data.map((dayData) => (

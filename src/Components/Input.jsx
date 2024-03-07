@@ -12,9 +12,7 @@ const Input = ({ city, setCity }) => {
   };
   
   return (
-    <div>
-      <div>
-        <div class="relative rounded-md shadow-sm">
+        <div class="relative rounded-md shadow-sm w-fit">
           <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
             <span class="text-gray-500 sm:text-sm">
               <PlaceIcon className="h-5 w-5 text-white" />
@@ -25,7 +23,7 @@ const Input = ({ city, setCity }) => {
               type="text"
               name="city"
               value={inputCity}
-              className="block w-full rounded-2xl border-0 py-1.5 pl-12 pr-20 text-white bg-black/75 placeholder:text-gray-400 sm:text-sm sm:leading-6"
+              className="block w-full rounded-2xl border-0 py-1.5 pl-12 text-white bg-black/30 placeholder:text-white/65"
               placeholder="Search for a city"
               autoComplete="off"
               onChange={handleChange}
@@ -33,8 +31,6 @@ const Input = ({ city, setCity }) => {
             <input type="submit" hidden/>
           </form>
         </div>
-      </div>
-    </div>
   );
 };
 

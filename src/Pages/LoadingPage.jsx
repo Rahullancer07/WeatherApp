@@ -2,12 +2,12 @@ import React from "react";
 
 const LoadingPage = () => {
   return (
-    <div className="w-full h-screen flex">
-      <div className="rounded-2xl bg-black/75 flex px-14 items-center gap-10 justify-between m-auto lg:w-9/12 lg:h-5/6 flex-row">
+    <div className="w-full h-screen">
+      <div className="rounded-2xl bg-black/30 flex items-center justify-center mx-5 my-5 md:mx-24 lg:mx-44 h-5/6 flex-row">
         <div role="status" className="m-auto">
           <svg
             aria-hidden="true"
-            class="w-20 h-20 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+            class="w-20 h-20 text-gray-200 animate-spin dark:text-white/65 fill-black/30"
             viewBox="0 0 100 101"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
