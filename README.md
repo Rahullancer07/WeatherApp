@@ -1,18 +1,25 @@
-# Weather Forecast Web Application
+# Taapmaan - A Weather Forecast Web App
 
-#### Live link - https://weatherapplive101.netlify.app/
+![weatherApp](https://github.com/Rahullancer07/WeatherApp/assets/51864063/68597f54-b5cc-4ac4-8148-48ec5353a0c3)
 
-![Weather Forecast App](https://github.com/Rahullancer07/WeatherApp/assets/51864063/18cfcae2-5838-4251-8e3e-ea4c9bc8c68e)
+#### Live link - [https://weatherapplive101.netlify.app/](https://taapmaan101.netlify.app/)
 
+## Tech Stack
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) 
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) 
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) 
 
-This real-time web application provides weather forecasts for the current day and the next three days. It includes essential weather properties such as humidity, precipitation, visibility, and more. Additionally, users can convert temperatures between Celsius and Fahrenheit.
+## About
 
-## Technologies Used
+- Developed a responsive weather application with ReactJS and Tailwind CSS for seamless viewing on mobile and desktop screens (200px to 2000px).
+- Integrated [WeatherAPI.com](http://weatherapi.com/) API to fetch real-time weather data for global cities.
+- Key features include:
+  - Current temperature display,
+  - Hourly and 3-day forecasts,
+  - Precipitation, visibility, humidity information,
+  - Wind speed and UV index tracking.
+- Supports temperature display in both Celsius and Fahrenheit for user convenience.
 
-- React
-- HTML
-- Tailwind CSS
-- JavaScript
 
 ## Data Source
 
@@ -28,4 +35,4 @@ To run the application locally, follow these steps:
    git clone https://github.com/your-username/your-repo.git
 2. Open the repo in any code-editor ( Example : vsCode )
 3. Run command "npm install" in terminal.
-4. Run command "npm start" , it will automatically host the web application in the browser.
+4. Run command "npm run start" , it will automatically host the web application in the browser.
